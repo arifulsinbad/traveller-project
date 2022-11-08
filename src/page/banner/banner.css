@@ -1,0 +1,12 @@
+.img-gradian::after{
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ border-radius: 14px;
+ display: inline-block;
+  /* For browsers that do not support gradients */
+ background-image: linear-gradient( rgba(16, 15, 15, 0.923), rgba(189, 189, 141, 0));
+}
