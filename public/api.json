@@ -1,0 +1,52 @@
+[
+ {
+  "name": "Mecca",
+  "title": "Saudi Arabia - Home to the holy land of Makkah",
+  "service_id": "01",
+     "img": "https://hhwt-images-upload.s3-ap-southeast-1.amazonaws.com/res/hhwt/image/upload/hnuhcg8y7smnoqtcjpeu/1526616423.jpg",
+     "charge": "5000",
+     "description": "The country is home to the most important religious sites of Muslims and the best among Muslim-friendly travel destinations around the world. It is where Muslims from all continents come together to perform the sacred pilgrimages of Hajj and Umrah. Saudi’s history is rooted deep in the first steps, progressions, struggles and battles of Islam and prominent religious figures. Makkah and Madinah are the holiest cities, but all cities in Saudi Arabia have a lot to offer to travellers and tourists with varied interests. Since it is a Muslim country, everything is as per the preferences of Muslim travellers, irrespective of which part of the world they are coming from."
+ },
+ {
+  "name": "Modina",
+  "title": "Tracing The History Of Masjid-e Nabawi: The Prophet’s Mosque",
+  "service_id": "02",
+     "img": "https://zamzam.com/blog/wp-content/uploads/2021/08/shutterstock_1234244062.jpg",
+     "charge": "5000",
+     "description": "Situated at the heart of Madinah and built by the Prophet Muhammad (PBUH), Masjid-e Nabawi is the second largest mosque in Madinah, Saudi Arabia after Masjid Quba. After Al-Haram mosque in Makkah, it is considered the second holiest spot for Muslims. The history of Masjid-e Nabawi tells the story of two orphans, Sahl and Suhayl, who retained the land of Masjid-e Nabawi. Here is how it goes."
+ },
+ {
+  "name": "Istanbul",
+  "title": "Things to Know Before You Visit Istanbul: Helpful Istanbul Travel Tips",
+  "service_id": "03",
+     "img": "https://hhwt-images-upload.s3-ap-southeast-1.amazonaws.com/res/hhwt/image/upload/jjnag9htdmgtbsjioktp/1526629460.jpg",
+     "charge": "4000",
+     "description": "This might be a popular destination for travellers because of its rich culture, but Istanbul is actually a lot more significant than we think! The city served as the intellectual, political and spiritual capital for much of the Ottoman’s history - the longest-serving Caliphates in Islam’s history.From the grandness of its architecture to the kindness of the people, you'll be constantly offered a reminder of the beauty of this deen when walking through the streets of Istanbul ?"
+ },
+ {
+  "name": "Sahara",
+  "title": "What does visiting the Sahara entail?",
+  "service_id": "04",
+     "img": "https://hhwt-images-upload.s3-ap-southeast-1.amazonaws.com/res/hhwt/image/upload/cadzy1mnbsaliiymfgve/1526616673.jpg",
+     "charge": "4500",
+     "description": "This destination is purposefully left open-ended as I believe that any way one finds to enter the Sahara will lead to a transformative experience. Having visited the Sahara in both Morocco and Egypt I can testify to the power of this desert, which vastness offers a reminder of the infinite-ness of Allah and the majesty of His creations.By venturing into the desert, you will be taken back to a landscape that has been left in a pristine state, unaffected by modernity, leaving you the opportunity to ponder on your own state without the distractions one is normally surrounded by."
+ },
+ {
+  "name": "Cairo",
+  "title": "Cairo Travel Guide",
+  "service_id": "05",
+     "img": "https://hhwt-images-upload.s3-ap-southeast-1.amazonaws.com/res/hhwt/image/upload/uhw7clmlbfq59mgcizsa/1526629014.jpg",
+     "charge": "2000",
+     "description": "Much like Fez, Cairo is a city steep in history, offering sites and monuments that are spiritually significant for all of humanity. The pyramids here is a visual reminder of the stories of Prophet Musa and Prophet Yusuf, and their dealing with the pharoahs.Cairo is also arguably one of the most productive centres of learning in the Islamic world, with students coming from all over the globe to obtain knowledge from many of its centres, the foremost of which is Al-Azhar University!"
+ },
+ {
+  "name": "Al-Quds",
+  "title": "Al-Quds Travel Guide",
+  "service_id": "06",
+     "img": "https://hhwt-images-upload.s3-ap-southeast-1.amazonaws.com/res/hhwt/image/upload/g4fb6prfrnsha9lg47et/1526617210.jpg",
+     "charge": "3400",
+     "description": "Al-Quds or better known as Jerusalem is the epicentre of the three Abrahamic traditions and remains as one of the world’s holiest cities. You can't visit this place without being reminded of the shared history of Abrahams lineage, and there's no other place in the world which reflects this better than on Harem el-Sharif - where the holy sites of the Al-Aqsa Mosque, the Dome of the Rock, the Western Wall and the Church of the Holy Sepulchre are situated?"
+ }
+
+
+]
