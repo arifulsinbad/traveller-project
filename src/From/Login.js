@@ -2,11 +2,14 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaBeer, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../Authprovider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 const Login = () => {
- const {login}=useContext(AuthContext)
+ const {login, google}=useContext(AuthContext)
+ const provider = new GoogleAuthProvider()
  const navigate = useNavigate()
  const location = useLocation()
  const form = location.state?.from?.pathname || '/' 
+
  const handleLogin = (event)=>{
   event.preventDefault()
   const from = event.target;
@@ -22,13 +25,16 @@ const Login = () => {
   .catch(eror=>{
    console.error(eror)})
  }
+ const handleGoogle = () =>{
+  google(provider)
+ }
  return (
   <div className="hero min-h-screen bg-base-200 ">
   <div className="hero-content flex-col lg:flex-row-reverse gap-20">
     <div className="text-center lg:text-left">
       <h1 className="text-5xl font-bold">Login Now</h1>
       <div className="avatar placeholder">
-  <div className="bg-green-600 text-neutral-content rounded-full w-24 btn-ghost mt-7">
+  <div onClick={handleGoogle} className="bg-green-600 text-neutral-content rounded-full w-24 btn-ghost mt-7">
     <Link className="text-3xl"><FaGoogle></FaGoogle></Link>
     <h3 className='text-2xl'>oogle</h3>
   </div>

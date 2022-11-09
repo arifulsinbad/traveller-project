@@ -6,7 +6,7 @@ import { AuthContext } from '../Authprovider/AuthProvider';
 const CheckOut = () => {
  const{user}=useContext(AuthContext)
  const details = useLoaderData()
- const {title, charge, _id}=details;
+ const {title, charge, _id, price}=details;
  const handleInfo =(event)=>{
    event.preventDefault()
    const from =event.target;
@@ -20,6 +20,7 @@ const CheckOut = () => {
       service: _id,
       serviceName: title,
       customer: name,
+      price,
       cary,
       number,
       email,
