@@ -39,8 +39,9 @@ const SignUp = () => {
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>
+        <p className='text-start'>Alredy have Account...<Link to='/Login' className='text-primary-focus btn-ghost'>Login</Link></p>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn btn-primary">SignUp</button>
         </div>
       </form>
     </div>
