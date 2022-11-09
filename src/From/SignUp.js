@@ -2,10 +2,15 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBeer, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../Authprovider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 
 const SignUp = () => {
-const {signUp}=useContext(AuthContext)
+const {signUp, google}=useContext(AuthContext)
+const googleProvider = new GoogleAuthProvider()
+const handleGoogle =()=>{
+ google(googleProvider)
+}
 const handleSignUp =(event)=>{
  event.preventDefault()
  const from =event.target;
@@ -30,7 +35,7 @@ const handleSignUp =(event)=>{
       <h1 className="text-5xl font-bold">Sign Up Now</h1>
       <div className="avatar placeholder">
   <div className="bg-green-600 text-neutral-content rounded-full w-24 btn-ghost mt-7">
-    <Link className="text-3xl"><FaGoogle></FaGoogle></Link>
+    <button onClick={handleGoogle} className="text-3xl"><FaGoogle></FaGoogle></button>
     <h3 className='text-2xl'>oogle</h3>
   </div>
 </div> 
