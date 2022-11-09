@@ -4,6 +4,7 @@ import Orders from "../From/Orders";
 import SignUp from "../From/SignUp";
 import Main from "../layout/Main";
 import Home from "../page/Home";
+import Details from "../page/Place/Details";
 import Place from "../page/Place/Place";
 import Blog from "../shared/Blog";
 
@@ -31,14 +32,21 @@ const router = createBrowserRouter([
     path:'/signup', element:<SignUp></SignUp>
   },
   {
-    path:'/checkout', element:<CheckOut></CheckOut>
+    path:'/checkout/:id', element:<CheckOut></CheckOut>,
+    loader:({params})=>{
+      return fetch(`http://localhost:5000/services/${params.id}`)
+    }
   },
   {
     path:'/orders', element:<Orders></Orders>
   },
   {
-    path:'/details/:id'
-  }
+    path:'/details/:id', element:<Details></Details>,
+    loader:({params})=>{
+      return fetch(`http://localhost:5000/services/${params.id}`)
+    }
+  },
+
   ]
  }
 
