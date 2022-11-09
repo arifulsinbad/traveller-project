@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBeer, FaGoogle } from 'react-icons/fa';
+import { FaBeer, FaGoogle, } from 'react-icons/fa';
 import { AuthContext } from '../Authprovider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 
@@ -30,12 +30,13 @@ const handleSignUp =(event)=>{
 
  return (
   <div className="hero min-h-screen bg-base-200 ">
+   
   <div className="hero-content flex-col lg:flex-row-reverse gap-20">
     <div className="text-center lg:text-left">
       <h1 className="text-5xl font-bold">Sign Up Now</h1>
       <div className="avatar placeholder">
-  <div className="bg-green-600 text-neutral-content rounded-full w-24 btn-ghost mt-7">
-    <button onClick={handleGoogle} className="text-3xl"><FaGoogle></FaGoogle></button>
+  <div onClick={handleGoogle} className="bg-green-600 text-neutral-content rounded-full w-24 btn-ghost mt-7">
+    <button  className="text-3xl"><FaGoogle></FaGoogle></button>
     <h3 className='text-2xl'>oogle</h3>
   </div>
 </div> 
@@ -70,6 +71,7 @@ const handleSignUp =(event)=>{
       </form>
     </div>
   </div>
+ 
 </div>
  );
 };
