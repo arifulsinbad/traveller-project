@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBeer, FaGoogle } from 'react-icons/fa';
+import { AuthContext } from '../Authprovider/AuthProvider';
 
 
 const SignUp = () => {
+const {signUp}=useContext(AuthContext)
+const handleSignUp =(event)=>{
+ event.preventDefault()
+ const from =event.target;
+ const name =from.name.value;
+ const email = from.email.value;
+ const password = from.password.value;
+ console.log(name, email, password)
+ signUp(email, password)
+ .then(result=>{
+  const user = result.user;
+  console.log(user)
+ })
+ .catch(error=>{
+  console.error(error)
+ })
+}
+
  return (
   <div className="hero min-h-screen bg-base-200 ">
   <div className="hero-content flex-col lg:flex-row-reverse gap-20">
@@ -17,7 +36,7 @@ const SignUp = () => {
 </div> 
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form className="card-body">
+      <form onSubmit={handleSignUp} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Name</span>
