@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Places = ({places}) => {
 const {name, charge, description, _id, title, img}=places;
+console.log(name)
  return (
   <div className='mx-auto'>
    <div className="card card-compact w-96 bg-base-100 shadow-xl">

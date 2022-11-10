@@ -11,6 +11,7 @@ const AuthProvider = ({children}) => {
  const [loading, setLoading]=useState(true)
 
 const logout = ()=>{
+ localStorage.removeItem('token')
  return signOut(auth)
 }
  const google = (provider)=>{

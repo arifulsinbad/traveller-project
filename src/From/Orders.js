@@ -11,20 +11,29 @@ const Orders = () => {
   // console.log(order)
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/orders?email=${user?.email}`)
+    fetch(`http://localhost:5000/orders?email=${user?.email}`,{
+      headers:{
+        authorization:`Bearer ${localStorage.getItem('token')}`
+      }
+    })
     .then(res=>{
-      
+      if(res.status === 401 || res.status === 403){
+        return logout()
+            }
      return res.json()})
     .then(data=>{
       setOrder(data)
     })
-  }, [user?.email])
+  }, [user?.email, logout])
 
 const handleDelete =(id)=>{
   const procced = window.confirm('Are YOU Sure You want to delete')
   if(procced){
     fetch(`http://localhost:5000/orders/${id}`,{
-      method:'DELETE'
+      method:'DELETE',
+      headers:{
+        authorization:`Bearer ${localStorage.getItem('token')}`
+      }
     })
     .then(res=> res.json())
     .then(data=>{
