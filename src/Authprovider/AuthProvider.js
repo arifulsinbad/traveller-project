@@ -14,12 +14,15 @@ const logout = ()=>{
  return signOut(auth)
 }
  const google = (provider)=>{
+  setLoading(true)
   return signInWithPopup(auth, provider)
  }
  const signUp = (email, password)=>{
+  setLoading(true)
   return createUserWithEmailAndPassword(auth, email, password)
  }
 const login = (email, password)=>{
+ setLoading(true)
  return signInWithEmailAndPassword(auth, email, password)
 }
 

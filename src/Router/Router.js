@@ -6,6 +6,7 @@ import Main from "../layout/Main";
 import Home from "../page/Home";
 import Details from "../page/Place/Details";
 import Place from "../page/Place/Place";
+import Private from "../Private/Private";
 import Blog from "../shared/Blog";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -39,9 +40,10 @@ const router = createBrowserRouter([
   },
   {
     path:'/orders', element:<Orders></Orders>
+    
   },
   {
-    path:'/details/:id', element:<Details></Details>,
+    path:'/details/:id', element:<Private><Details></Details></Private>,
     loader:({params})=>{
       return fetch(`http://localhost:5000/services/${params.id}`)
     }

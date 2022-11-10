@@ -1,6 +1,44 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../Authprovider/AuthProvider';
+import Order from './Order';
 
 const Orders = () => {
+  const {user, logout}=useContext(AuthContext)
+ 
+  const [order, setOrder]=useState([])
+  
+  // console.log(order)
+
+  useEffect(()=>{
+    fetch(`http://localhost:5000/orders?email=${user?.email}`)
+    .then(res=>{
+      
+     return res.json()})
+    .then(data=>{
+      setOrder(data)
+    })
+  }, [user?.email])
+
+const handleDelete =(id)=>{
+  const procced = window.confirm('Are YOU Sure You want to delete')
+  if(procced){
+    fetch(`http://localhost:5000/orders/${id}`,{
+      method:'DELETE'
+    })
+    .then(res=> res.json())
+    .then(data=>{
+      console.log(data)
+      if(data.deletedCount > 0){
+alert('Delete Success')
+const remaining = order.filter(d => d._id !== id)
+setOrder(remaining)
+      }
+    })
+    .catch(error=>console.log(error))
+  }
+}
+
  return (
   <div>
    <div className="overflow-x-auto w-full">
@@ -13,43 +51,17 @@ const Orders = () => {
             <input type="checkbox" className="checkbox" />
           </label>
         </th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
+        <th>Name/Address</th>
+        <th>Travel/Service</th>
+        <th>Booking Charge</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       
-      <tr>
-        <th>
-          <label>
-            <input type="checkbox" className="checkbox" />
-          </label>
-        </th>
-        <td>
-          <div className="flex items-center space-x-3">
-            <div className="avatar">
-              <div className="mask mask-squircle w-12 h-12">
-                <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-              </div>
-            </div>
-            <div>
-              <div className="font-bold">Hart Hagerty</div>
-              <div className="text-sm opacity-50">United States</div>
-            </div>
-          </div>
-        </td>
-        <td>
-          Zemlak, Daniel and Leannon
-          <br/>
-          <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-        </td>
-        <td>Purple</td>
-        <th>
-          <button className="btn btn-ghost btn-xs">details</button>
-        </th>
-      </tr>
+     {
+      order.map(order=><Order key={order._id} order={order} handleDelete={handleDelete}></Order>)
+     }
      </tbody>
   </table>
 </div>

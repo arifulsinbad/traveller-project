@@ -1,12 +1,14 @@
 import { data } from 'autoprefixer';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../Authprovider/AuthProvider';
 
 const CheckOut = () => {
  const{user}=useContext(AuthContext)
  const details = useLoaderData()
- const {title, charge, _id, price}=details;
+ const {title, charge, _id, img }=details;
+
+
  const handleInfo =(event)=>{
    event.preventDefault()
    const from =event.target;
@@ -20,7 +22,8 @@ const CheckOut = () => {
       service: _id,
       serviceName: title,
       customer: name,
-      price,
+      img:img,
+      charge,
       cary,
       number,
       email,
@@ -37,6 +40,9 @@ const CheckOut = () => {
    .then(res=>res.json())
    .then(data=>{
       console.log(data)
+      if(data.acknowledged){
+alert('You are a success')
+      }
    })
    .catch(error=>console.error(error))
  }
