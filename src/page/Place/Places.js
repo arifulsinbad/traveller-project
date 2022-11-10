@@ -6,7 +6,7 @@ const {name, charge, description, _id, title, img}=places;
  return (
   <div className='mx-auto'>
    <div className="card card-compact w-96 bg-base-100 shadow-xl">
-  <figure><img src={img} alt="Shoes" style={{height: '300px'}} /></figure>
+  <a href={img} target='_blank'><img src={img} alt="Shoes" style={{height: '300px'}} /></a>
   <div className="card-body">
     <h2 className="card-title">{name}</h2>
     <p>{description.slice(0, 200)}...</p>

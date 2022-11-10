@@ -1,6 +1,6 @@
 import { data } from 'autoprefixer';
 import React, { useContext, useEffect } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../Authprovider/AuthProvider';
 
 const CheckOut = () => {
@@ -42,6 +42,7 @@ const CheckOut = () => {
       console.log(data)
       if(data.acknowledged){
 alert('You are a success')
+
       }
    })
    .catch(error=>console.error(error))

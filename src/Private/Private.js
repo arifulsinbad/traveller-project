@@ -3,7 +3,7 @@ import { FaSpinner } from 'react-icons/fa';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../Authprovider/AuthProvider';
 
-const Private = () => {
+const Private = ({children}) => {
  const {user, loading} = useContext(AuthContext)
  const location =useLocation()
 
@@ -15,7 +15,12 @@ if(loading){
   Processing...
 </button>
 }
-<Navigate to='/login' state={{from:location}} replace></Navigate>
+if(!user){
+ return <Navigate to='/login' state={{from:location}} replace></Navigate>
+}
+else{
+  return children
+}
 };
 
 export default Private;
