@@ -9,7 +9,7 @@ const Place = () => {
  const [size, setSize] =useState(3)
  console.log(size)
  useEffect(()=>{
-const url =`http://localhost:5000/services?page=${page}&size=${size}`
+const url =`https://y-chi-amber.vercel.app/services?page=${page}&size=${size}`
 fetch(url)
 .then(res=>res.json())
 .then(data=>{

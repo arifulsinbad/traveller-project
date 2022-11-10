@@ -7,10 +7,10 @@ import Place from './Place/Place';
 const Home = () => {
  return (
   <div>
+   <Info></Info>
    <Carousel></Carousel>
    <Place></Place>
    <Cary></Cary>
-   <Info></Info>
   </div>
  );
 };

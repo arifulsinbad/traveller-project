@@ -11,7 +11,7 @@ const Orders = () => {
   // console.log(order)
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/orders?email=${user?.email}`,{
+    fetch(`https://y-chi-amber.vercel.app/orders?email=${user?.email}`,{
       headers:{
         authorization:`Bearer ${localStorage.getItem('token')}`
       }
@@ -29,7 +29,7 @@ const Orders = () => {
 const handleDelete =(id)=>{
   const procced = window.confirm('Are YOU Sure You want to delete')
   if(procced){
-    fetch(`http://localhost:5000/orders/${id}`,{
+    fetch(`https://y-chi-amber.vercel.app/orders/${id}`,{
       method:'DELETE',
       headers:{
         authorization:`Bearer ${localStorage.getItem('token')}`

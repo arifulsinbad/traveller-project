@@ -35,7 +35,7 @@ const router = createBrowserRouter([
   {
     path:'/checkout/:id', element:<CheckOut></CheckOut>,
     loader:({params})=>{
-      return fetch(`http://localhost:5000/services/${params.id}`)
+      return fetch(`https://y-chi-amber.vercel.app/services/${params.id}`)
     }
   },
   {
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
   {
     path:'/details/:id', element:<Private><Details></Details></Private>,
     loader:({params})=>{
-      return fetch(`http://localhost:5000/services/${params.id}`)
+      return fetch(`https://y-chi-amber.vercel.app/services/${params.id}`)
     }
   },
 
